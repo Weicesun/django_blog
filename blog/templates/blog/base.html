@@ -10,9 +10,11 @@
     <body>
         <div>
 	   <div class="page-header">
-            <h1><a href="tutorial.djangogirls.org">Django Girls Blog</a></h1>
-	    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-	   </div>
+	    {%if user.is_authenticated%}
+	           <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	   {%endif%}
+	    <h1><a href="tutorial.djangogirls.org">Django Girls Blog</a></h1>
+	    </div>
         </div>
     <div class="content container">
     <div class="row">
